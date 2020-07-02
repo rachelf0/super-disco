@@ -20,7 +20,6 @@ THEN the saved events persist
 • HTML
 • CSS
 • JavaScript
-Along with
 • Moment.js
 • Bootstrap
 • jQuery
