@@ -33,24 +33,20 @@ $("#3Row").val(localStorage.getItem("3Row"));
 $("#4Row").val(localStorage.getItem("4Row"));
 $("#5Row").val(localStorage.getItem("5Row"));
 
- // set a variable inputTime to represent the input block's corresponding time with a for loop
- for (var j = 1; j <= 12; j++) {
-    var inputTime = $("#" + j + "Row").attr("data-time");
+for (var i = 1; i <= 12; i++) {
+    var inputTime = $("#" + i + "Row").attr("data-time");
     var inputTimeInt = parseInt(inputTime);
     console.log(inputTimeInt);
 
-    // Set color styling based on comparisons between the currentTimeInt and the inputTimeInt
-    if (currentTimeInt === inputTimeInt){
-        $("#" + j + "Row").addClass("present");
-        
-    }
+ if (currentTimeInt === inputTimeInt) {
+     $("#" + i + "Row").addClass("present");
+ }
 
-    if (currentTimeInt > inputTimeInt){
-        $("#" + j + "Row").addClass("past");
-    }
+if (currentTimeInt > inputTimeInt) {
+    $("#" + i + "Row").addClass("past");
+ }
 
-    if (currentTimeInt < inputTimeInt){
-        $("#" + j + "Row").addClass("future");
-    }
-
+ if (currentTimeInt > inputTimeInt) {
+    $("#" + i + "Row").addClass("future");
+ }
 }
