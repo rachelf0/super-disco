@@ -1,6 +1,7 @@
 // Define Variables
 var currentTime = moment().format("dddd MMMM Do YYYY, h:mm a");
-var currentTimeInt = parseInt(currentTime);
+// var currentTimeInt = parseInt();
+var currentTimeInt = moment().hour();
 var saveBtn = $(".saveBtn");
 $("#currentDay").text(currentTime);
 
@@ -36,7 +37,7 @@ $("#5Row").val(localStorage.getItem("5Row"));
 for (var i = 1; i <= 12; i++) {
     var inputTime = $("#" + i + "Row").attr("data-time");
     var inputTimeInt = parseInt(inputTime);
-    console.log(inputTimeInt);
+    console.log(currentTimeInt);
 
  if (currentTimeInt === inputTimeInt) {
      $("#" + i + "Row").addClass("present");
