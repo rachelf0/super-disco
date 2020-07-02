@@ -23,8 +23,6 @@ $(".saveBtn").on("click",function() {
     localStorage.setItem(hour, userInput);
 })
 
-console.log(localStorage.getItem("9Row"));
-
 $("#9Row").val(localStorage.getItem("9Row"));
 $("#10Row").val(localStorage.getItem("10Row"));
 $("#11Row").val(localStorage.getItem("11Row"));
@@ -34,3 +32,25 @@ $("#2Row").val(localStorage.getItem("2Row"));
 $("#3Row").val(localStorage.getItem("3Row"));
 $("#4Row").val(localStorage.getItem("4Row"));
 $("#5Row").val(localStorage.getItem("5Row"));
+
+ // set a variable inputTime to represent the input block's corresponding time with a for loop
+ for (var j = 1; j <= 12; j++) {
+    var inputTime = $("#" + j + "Row").attr("data-time");
+    var inputTimeInt = parseInt(inputTime);
+    console.log(inputTimeInt);
+
+    // Set color styling based on comparisons between the currentTimeInt and the inputTimeInt
+    if (currentTimeInt === inputTimeInt){
+        $("#" + j + "Row").addClass("present");
+        
+    }
+
+    if (currentTimeInt > inputTimeInt){
+        $("#" + j + "Row").addClass("past");
+    }
+
+    if (currentTimeInt < inputTimeInt){
+        $("#" + j + "Row").addClass("future");
+    }
+
+}
